@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<h1> Upload</h1>
+
+<body>
+
+
+    {% if success %}
+        <script>
+            alert("File uploaded successfully!");
+        </script>
+    {% endif %}
+    <div>
+        <form method="POST" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit"> Upload </button>
+        </form>
+    </div>
+</body>
