@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-
-<h1> Upload</h1>
-
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
 <body>
 
+    <h1>Image Upload</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
 
     {% if success %}
-        <script>
-            alert("File uploaded successfully!");
-        </script>
+        <p style="color: green;">Image uploaded successfully!</p>
     {% endif %}
-    <div>
-        <form method="POST" enctype="multipart/form-data"> 
-            {% csrf_token %}
-            {{ form.as_p }}
 
-            <button type="submit"> Upload </button>
-        </form>
-    </div>
+    {% if upload_image %}
+        <h3>Preview:</h3>
+        <img src="{{ upload_image.image.url }}" alt="Uploaded Image" style="max-width: 300px;">
+    {% endif %}
+
 </body>
+</html>

@@ -5,7 +5,7 @@ from django.db.models import ImageField, FileField
 
 class uupload(models.Model):
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='documents/')
+    image = models.ImageField(upload_to='uploads/')
     description = models.TextField(max_length=200)
 
     def __str__(self):
