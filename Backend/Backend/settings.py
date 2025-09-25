@@ -18,7 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#tells django where uploaded files will be stored and how to access them with urls 
+# when doing ImageField(upload_to='uploads/') then the image name will be at media/uploads/image_name
 
+#this needs to be added to urlpatterns  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
