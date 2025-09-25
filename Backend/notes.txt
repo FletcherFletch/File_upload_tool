@@ -1,0 +1,9 @@
+Seperation of Concerns
+
+    design principle for breaking down complex systems into smaller more managable parts 
+
+    each app wants its own domain so it can be managed and reused independently 
+
+    break views into handlers and serializers (for APIs)
+
+    Django-REST framework can be used to cleanly sparate API logic from views 
